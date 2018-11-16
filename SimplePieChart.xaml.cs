@@ -5,8 +5,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-//using static AniLyst_5._0.CustomControls.PieChart;
-
 namespace AniLyst_5._0.CustomControls
 {
     /// <summary>
