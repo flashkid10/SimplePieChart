@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="AniLyst_5._0.CustomControls.SimplePieChart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AniLyst_5._0.CustomControls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Margin="5,4.6,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TitleTextBlock" Grid.Row="0">Distribution</TextBlock>
+
+        <Rectangle x:Name="TitleBar" Fill="#FFEFEFF0" Height="1" Grid.Row="1" Margin="0,1" VerticalAlignment="Center" />
+
+        <Grid x:Name="MainGrid" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Viewbox x:Name="PieViewBox" Grid.Column="0" Margin="3">
+                <Grid x:Name="PieGridContainer" Grid.Column="0" Width="201" Height="201">
+                    <Grid x:Name="PieGrid" Grid.Column="0" Width="200" Height="200">
+                        <Grid.LayoutTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-90" />
+                            </TransformGroup>
+                        </Grid.LayoutTransform>
+                    </Grid>
+                    <xctk:Pie StartAngle="0" EndAngle="360" Mode="EndAngle" Fill="{x:Null}" Stroke="Black" />
+                </Grid>
+            </Viewbox>
+
+            <Grid x:Name="LengendGrid" Grid.Column="1" Margin="5">
+                <GroupBox x:Name="Lengend" Header="Lengend" BorderBrush="Black">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="LengendBox" />
+                    </ScrollViewer>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
